@@ -22,7 +22,7 @@ public class Pila implements PilaInterface{
     @Override
     public boolean apilar(Object elemento) {
         boolean resultado = false;
-        if(this.tope != TAM-1){
+        if(this.tope < TAM-1){
             this.arreglo[this.tope+1] = elemento;
             this.tope += 1;
             resultado = true;
@@ -44,7 +44,12 @@ public class Pila implements PilaInterface{
 
     @Override
     public Object obtenerTope() {
-        return this.arreglo[this.tope];
+        Object elemento = null;
+        if(this.tope >= 0)
+        {
+            elemento = this.arreglo[this.tope];
+        }
+        return elemento;
     }
 
     @Override
@@ -101,7 +106,7 @@ public class Pila implements PilaInterface{
             {
                 resultado += this.arreglo[aux].toString();
                 aux -= 1;
-                if(aux > 0){
+                if(aux >= 0){
                     resultado += ",";
                 }
             }
