@@ -36,7 +36,7 @@ public class Pila implements PilaInterface{
     }
 
     @Override
-    public PilaInterface clone() {
+    public Pila clone() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
