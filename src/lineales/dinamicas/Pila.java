@@ -7,10 +7,10 @@ package lineales.dinamicas;
 import lineales.interfaces.PilaInterface;
 
 
-/**
- *
- * @author Luis
- */
+/************* Autores ***********
+KELLER LUIS EULOGIO, Legajo FAI-2321
+*/
 public class Pila implements PilaInterface{
+    
     
 }

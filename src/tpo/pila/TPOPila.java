@@ -4,10 +4,9 @@
  */
 package tpo.pila;
 
-/**
- *
- * @author Luis
- */
+/************* Autores ***********
+KELLER LUIS EULOGIO, Legajo FAI-2321
+*/
 public class TPOPila {
 
     /**
