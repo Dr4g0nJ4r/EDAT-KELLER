@@ -18,7 +18,7 @@ public class Pila implements PilaInterface{
     }
 
     @Override
-    public boolean desapilar(Object elemento) {
+    public boolean desapilar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

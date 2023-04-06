@@ -12,7 +12,7 @@ public interface PilaInterface {
     
     public boolean apilar(Object elemento);
     
-    public boolean desapilar(Object elemento);
+    public boolean desapilar();
     
     public Object obtenerTope();
     
