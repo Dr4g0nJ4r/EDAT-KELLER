@@ -4,14 +4,24 @@
  */
 package lineales.interfaces;
 
-/**
- *
- * @author Luis
- */
+/************* Autores ***********
+KELLER LUIS EULOGIO, Legajo FAI-2321
+*/
+
 public interface PilaInterface {
     
     public boolean apilar(Object elemento);
     
+    public boolean desapilar(Object elemento);
     
+    public Object obtenerTope();
     
+    public boolean esVacia();
+    
+    public void vaciar();
+    
+    public PilaInterface clone();
+    
+    @Override
+    public String toString();
 }
