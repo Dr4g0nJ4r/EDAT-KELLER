@@ -11,12 +11,56 @@ import interfaces.Lista_Interface;
  */
 public class ArbolGenerico implements ArbolGenerico_Interface{
 
+    private NodoGen raiz;
+    
+    //Constructor
+    public ArbolGenerico(){
+        this.raiz = null;
+    }
     
     @Override
     public boolean insertar(Object elem, Object elemPadre) {
-        
+        boolean resultado = false;
+        //Consulta primero si el árbol está vacío
+        if(this.raiz == null)
+        {
+            this.raiz = new NodoGen(elem);
+        }else{
+            resultado = this.insertarRecursivo(elem, elemPadre, this.raiz);
+        }
+        return resultado;
     }
 
+    //método recursivo privado usado para insertar elementos. Recorrido en PreOrden
+    private boolean insertarRecursivo(Object elem, Object elemPadre, NodoGen nodo){
+        boolean resultado = false;
+        if(nodo.getElem().equals(elemPadre))
+        {
+            NodoGen nodoAux = new NodoGen(elem);
+            //Si hijoIzquierdo es vacio, lo guarda. Sino inserta en el siguiente nodoHermano del hijo
+            if(nodo.getHijoIzq() == null){
+                nodo.setHijoIzq(nodoAux);
+            }else{
+                nodoAux.setHermanoDer(nodo.getHijoIzq());
+                nodo.setHijoIzq(nodoAux);
+            }
+            resultado = true;
+        }else{
+            //Caso base
+            if(nodo.getHijoIzq() != null)
+            {
+                //Caso recursivo en hijoIzq
+                this.insertarRecursivo(elem, elemPadre, nodo.getHijoIzq());
+                //Caso recursivo en hermanos hijoIzq
+                NodoGen nodoAux = nodo.getHijoIzq().getHermanoDer();
+                while(nodoAux != null){
+                    this.insertarRecursivo(elem, elemPadre, nodoAux);
+                }
+            }
+        }
+        return resultado;
+    }
+    
     @Override
     public boolean pertenece(Object elem) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

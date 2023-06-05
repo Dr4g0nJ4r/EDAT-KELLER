@@ -12,9 +12,9 @@ public interface NodoGen_Interface {
     
     public Object getElem();
     
-    public NodoGen_Interface getHijoIzq();
+    public NodoGen getHijoIzq();
     
-    public NodoGen_Interface getHermanoDer();
+    public NodoGen getHermanoDer();
     
     public void setElem(Object elem);
     

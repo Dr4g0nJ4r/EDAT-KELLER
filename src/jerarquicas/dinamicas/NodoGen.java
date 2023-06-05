@@ -28,12 +28,12 @@ public class NodoGen implements NodoGen_Interface{
     }
 
     @Override
-    public NodoGen_Interface getHijoIzq() {
+    public NodoGen getHijoIzq() {
         return this.hijoIzquierdo;
     }
 
     @Override
-    public NodoGen_Interface getHermanoDer() {
+    public NodoGen getHermanoDer() {
         return this.hermanoDerecho;
     }
 
