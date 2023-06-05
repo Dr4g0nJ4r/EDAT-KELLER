@@ -4,6 +4,9 @@
  */
 package interfaces;
 
+import jerarquicas.dinamicas.ArbolGenerico;
+import lineales.dinamicas.Lista;
+
 /**
  *
  * @author Luis
@@ -24,15 +27,15 @@ public interface ArbolGenerico_Interface {
     
     public Object padre(Object elem);
     
-    public Lista_Interface listarPreorden();
+    public Lista listarPreorden();
     
-    public Lista_Interface listarInorden();
+    public Lista listarInorden();
     
-    public Lista_Interface listarPosorden();
+    public Lista listarPosorden();
     
-    public Lista_Interface listarPorNiveles();
+    public Lista listarPorNiveles();
     
-    public ArbolGenerico_Interface clone();
+    public ArbolGenerico clone();
     
     public void vaciar();
     
