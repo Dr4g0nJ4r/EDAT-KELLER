@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface NodoHashDicc {
+public interface NodoBin_Interface {
     
 }

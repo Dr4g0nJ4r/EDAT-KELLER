@@ -4,13 +4,13 @@
  */
 package lineales.dinamicas;
 
-import interfaces.PilaInterface;
+import interfaces.Pila_Interface;
 
 
 /************* Autores ***********
 KELLER LUIS EULOGIO, Legajo FAI-2321
 */
-public class Pila implements PilaInterface{
+public class Pila implements Pila_Interface{
 
     private Nodo tope;
     

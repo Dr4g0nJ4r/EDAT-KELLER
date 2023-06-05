@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface NodoAVL {
+public interface NodoGen_Interface {
     
 }

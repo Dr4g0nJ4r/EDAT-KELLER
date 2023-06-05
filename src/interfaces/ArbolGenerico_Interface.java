@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface AVL {
+public interface ArbolGenerico_Interface {
     
 }

@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface NodoAdyacente {
+public interface Lista_Interface {
     
 }

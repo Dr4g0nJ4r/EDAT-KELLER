@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface TablaHashCerrado {
+public interface CeldaBinario_Interface {
     
 }

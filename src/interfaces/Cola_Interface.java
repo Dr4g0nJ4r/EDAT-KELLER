@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface CeldaHash {
+public interface Cola_Interface {
     
 }

@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface ABB {
+public interface NodoVertice_Interface {
     
 }

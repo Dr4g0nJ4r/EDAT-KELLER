@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface ListaInterface {
+public interface ColaPrioridad_Interface {
     
 }

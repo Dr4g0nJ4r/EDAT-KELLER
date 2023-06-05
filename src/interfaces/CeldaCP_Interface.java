@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface ColaPrioridad {
+public interface CeldaCP_Interface {
     
 }

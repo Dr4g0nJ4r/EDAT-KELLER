@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface CeldaCP {
+public interface Grafo_Interface {
     
 }

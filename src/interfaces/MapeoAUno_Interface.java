@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface ArbolBinario {
+public interface MapeoAUno_Interface {
     
 }

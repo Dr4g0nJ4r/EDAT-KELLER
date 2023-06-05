@@ -3,12 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package lineales.estaticas;
-import interfaces.PilaInterface;
+import interfaces.Pila_Interface;
 
 /************* Autores ***********
 KELLER LUIS EULOGIO, Legajo FAI-2321
 */
-public class Pila implements PilaInterface{
+public class Pila implements Pila_Interface{
 
     private static int TAM = 10;
     private Object[] arreglo;

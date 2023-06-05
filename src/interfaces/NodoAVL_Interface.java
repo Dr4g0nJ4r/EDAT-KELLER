@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface MapeoAUno {
+public interface NodoAVL_Interface {
     
 }

@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface NodoGen {
+public interface Diccionario_Interface {
     
 }

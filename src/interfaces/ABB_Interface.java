@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface Diccionario {
+public interface ABB_Interface {
     
 }

@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface NodoHashMapeo {
+public interface TablaHashCerrado_Interface {
     
 }

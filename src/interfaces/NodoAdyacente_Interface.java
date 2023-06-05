@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface ColaInterface {
+public interface NodoAdyacente_Interface {
     
 }

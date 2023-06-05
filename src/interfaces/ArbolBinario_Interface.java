@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface Grafo {
+public interface ArbolBinario_Interface {
     
 }

@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface NodoHash {
+public interface ArbolHeap_Interface {
     
 }

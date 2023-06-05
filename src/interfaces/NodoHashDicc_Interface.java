@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface MapeoAMuchos {
+public interface NodoHashDicc_Interface {
     
 }

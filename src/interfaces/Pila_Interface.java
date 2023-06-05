@@ -8,7 +8,7 @@ package interfaces;
 KELLER LUIS EULOGIO, Legajo FAI-2321
 */
 
-public interface PilaInterface {
+public interface Pila_Interface {
     
     public boolean apilar(Object elemento);
     
@@ -20,7 +20,7 @@ public interface PilaInterface {
     
     public void vaciar();
     
-    public PilaInterface clone();
+    public Pila_Interface clone();
     
     @Override
     public String toString();

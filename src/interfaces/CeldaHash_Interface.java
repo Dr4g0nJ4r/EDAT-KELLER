@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface NodoBin {
+public interface CeldaHash_Interface {
     
 }

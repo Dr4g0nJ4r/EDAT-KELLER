@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface NodoVertice {
+public interface TablaHashAbierto_Interface {
     
 }

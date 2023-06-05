@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface ArbolGenerico {
+public interface NodoHashMapeo_Interface {
     
 }

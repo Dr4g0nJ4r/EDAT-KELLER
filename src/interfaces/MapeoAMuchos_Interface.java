@@ -8,6 +8,6 @@ package interfaces;
  *
  * @author Luis
  */
-public interface TablaHashAbierto {
+public interface MapeoAMuchos_Interface {
     
 }
