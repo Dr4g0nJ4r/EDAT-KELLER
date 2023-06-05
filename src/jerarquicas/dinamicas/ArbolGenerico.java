@@ -5,6 +5,8 @@
 package jerarquicas.dinamicas;
 import interfaces.ArbolGenerico_Interface;
 import interfaces.Lista_Interface;
+import lineales.dinamicas.Lista;
+import lineales.dinamicas.Pila;
 /**
  *
  * @author Luis
@@ -104,10 +106,57 @@ public class ArbolGenerico implements ArbolGenerico_Interface{
     }
     
     @Override
-    public Lista_Interface ancestros(Object elem) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Lista ancestros(Object elem) {
+        Lista lista_ancestros = new Lista();
+        if(this.raiz != null)
+        {
+            Pila pila = new Pila();
+            this.ancestrosRecursivo(elem, pila, this.raiz);
+            if(!pila.esVacia())
+            {
+                while(!pila.esVacia())
+                {
+                    lista_ancestros.insertar(pila.obtenerTope(), lista_ancestros.longitud()+1);
+                    pila.desapilar();
+                }
+            }
+        }
+        return lista_ancestros;
     }
 
+    //Método recursivo preorden privado que sirve para recuperar los ancestros de un elemento
+    private void ancestrosRecursivo(Object elem, Pila pila, NodoGen nodo)
+    {
+        if(nodo.getElem().equals(elem))
+        {
+            pila.apilar(nodo.getElem());
+        }else{
+            //Caso base
+            if(nodo.getHijoIzq() != null)
+            {
+                //Caso recursivo en hijoIzq
+                this.ancestrosRecursivo(elem, pila, nodo.getHijoIzq());
+                if(!pila.esVacia())
+                {
+                    pila.apilar(nodo.getElem());
+                }else{
+                    NodoGen nodoAux = nodo.getHijoIzq().getHermanoDer();
+                    while(nodoAux != null && pila.esVacia())
+                    {
+                        //Caso recursivo en hermanos de HijoIzq
+                        this.ancestrosRecursivo(elem, pila, nodoAux);
+                        if(pila.esVacia())
+                        {
+                            nodoAux = nodoAux.getHermanoDer();
+                        }else{
+                            pila.apilar(nodo.getElem());
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     @Override
     public boolean esVacio() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

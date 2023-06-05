@@ -17,7 +17,7 @@ public interface ArbolGenerico_Interface {
     
     public boolean pertenece(Object elem);
     
-    public Lista_Interface ancestros(Object elem);
+    public Lista ancestros(Object elem);
     
     public boolean esVacio();
     
