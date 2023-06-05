@@ -50,11 +50,15 @@ public class ArbolGenerico implements ArbolGenerico_Interface{
             if(nodo.getHijoIzq() != null)
             {
                 //Caso recursivo en hijoIzq
-                this.insertarRecursivo(elem, elemPadre, nodo.getHijoIzq());
-                //Caso recursivo en hermanos hijoIzq
-                NodoGen nodoAux = nodo.getHijoIzq().getHermanoDer();
-                while(nodoAux != null){
-                    this.insertarRecursivo(elem, elemPadre, nodoAux);
+                resultado = this.insertarRecursivo(elem, elemPadre, nodo.getHijoIzq());
+                if(!resultado)
+                {
+                    //Caso recursivo en hermanos hijoIzq
+                    NodoGen nodoAux = nodo.getHijoIzq().getHermanoDer();
+                    while(nodoAux != null && !resultado){
+                        resultado = this.insertarRecursivo(elem, elemPadre, nodoAux);
+                        nodoAux = nodoAux.getHermanoDer();
+                    }
                 }
             }
         }
@@ -63,9 +67,42 @@ public class ArbolGenerico implements ArbolGenerico_Interface{
     
     @Override
     public boolean pertenece(Object elem) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        boolean resultado = false;
+        //Verifica que el árbol no esté vacío
+        if(this.raiz != null)
+        {
+            resultado = this.perteneceRecursivo(elem, this.raiz);
+        }
+        return resultado;
     }
 
+    //método recursivo privado para buscar elemento. recorrido en preorden
+    private boolean perteneceRecursivo(Object elem, NodoGen nodo){
+        boolean resultado = false;
+        if(nodo.getElem().equals(elem))
+        {
+            resultado = true;
+        }else{
+            //Caso base
+            if(nodo.getHijoIzq() != null)
+            {
+                //Caso recursivo en hijoIzq
+                resultado = this.perteneceRecursivo(elem, nodo.getHijoIzq());
+                if(!resultado)
+                {
+                    //Caso recursivo en hermanos hijoIzq
+                    NodoGen nodoAux = nodo.getHijoIzq().getHermanoDer();
+                    while(nodoAux != null && !resultado)
+                    {
+                        resultado = this.perteneceRecursivo(elem, nodoAux);
+                        nodoAux = nodoAux.getHermanoDer();
+                    }
+                }
+            }
+        }
+        return resultado;
+    }
+    
     @Override
     public Lista_Interface ancestros(Object elem) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
