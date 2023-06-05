@@ -10,4 +10,15 @@ package interfaces;
  */
 public interface NodoGen_Interface {
     
+    public Object getElem();
+    
+    public NodoGen_Interface getHijoIzq();
+    
+    public NodoGen_Interface getHijoDer();
+    
+    public void setElem(Object elem);
+    
+    public void setHijoIzq(NodoGen_Interface nodo);
+    
+    public void setHijoDer(NodoGen_Interface nodo);
 }
