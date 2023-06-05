@@ -178,27 +178,27 @@ public class ArbolGenerico implements ArbolGenerico_Interface{
     }
 
     @Override
-    public Lista_Interface listarPreorden() {
+    public Lista listarPreorden() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Lista_Interface listarInorden() {
+    public Lista listarInorden() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Lista_Interface listarPosorden() {
+    public Lista listarPosorden() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Lista_Interface listarPorNiveles() {
+    public Lista listarPorNiveles() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public ArbolGenerico_Interface clone() {
+    public ArbolGenerico clone() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
