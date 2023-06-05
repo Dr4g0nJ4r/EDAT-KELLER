@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package jerarquicas.estaticas;
+package jerarquicas.dinamicas;
 import interfaces.ArbolBinario_Interface;
 import interfaces.Lista_Interface;
 /**
