@@ -159,14 +159,47 @@ public class ArbolGenerico implements ArbolGenerico_Interface{
     
     @Override
     public boolean esVacio() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        boolean resultado = false;
+        if(this.raiz == null)
+        {
+            resultado = true;
+        }
+        return resultado;
     }
 
     @Override
     public int altura() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int altura = -1;
+        if(this.raiz != null)
+        {
+            this.alturaRecursivo(this.raiz);
+        }
+        return altura;
     }
 
+    //Método privado recursivo que recorre en posorden el árbol para hallar la altura del mismo
+    private int alturaRecursivo(NodoGen nodo)
+    {
+        int altura = 0;
+        if(nodo.getHijoIzq() != null)
+        {
+            NodoGen nodoAux = nodo.getHijoIzq();
+            int alturaAux;
+            // caso base
+            while(nodoAux != null)
+            {
+                //Caso recursivo
+                alturaAux = this.alturaRecursivo(nodoAux) + 1;
+                if(alturaAux > altura)
+                {
+                    altura = alturaAux;
+                }
+                nodoAux = nodoAux.getHermanoDer();
+            }
+        }
+        return altura;
+    }
+    
     @Override
     public int nivel(Object elem) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
