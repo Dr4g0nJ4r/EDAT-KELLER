@@ -16,34 +16,41 @@ public class NodoGen implements NodoGen_Interface{
     private NodoGen hijoIzquierdo;
     private NodoGen hermanoDerecho;
 
+    public NodoGen(Object elem){
+        this.elem = elem;
+        this.hijoIzquierdo = null;
+        this.hermanoDerecho = null;
+    }
+    
     @Override
     public Object getElem() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.elem;
     }
 
     @Override
     public NodoGen_Interface getHijoIzq() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.hijoIzquierdo;
     }
 
     @Override
     public NodoGen_Interface getHermanoDer() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return this.hermanoDerecho;
     }
 
     @Override
     public void setElem(Object elem) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.elem = elem;
     }
 
     @Override
-    public void setHijoIzq(NodoGen_Interface nodo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setHijoIzq(NodoGen nodo) {
+        this.hijoIzquierdo = nodo;
     }
 
+    
     @Override
-    public void setHermanoDer(NodoGen_Interface nodo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setHermanoDer(NodoGen nodo) {
+        this.hermanoDerecho = nodo;
     }
     
     
