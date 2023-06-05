@@ -11,6 +11,10 @@ import interfaces.NodoGen_Interface;
  * @author Luis
  */
 public class NodoGen implements NodoGen_Interface{
+    
+    private Object elem;
+    private NodoGen hijoIzquierdo;
+    private NodoGen hermanoDerecho;
 
     @Override
     public Object getElem() {
@@ -23,7 +27,7 @@ public class NodoGen implements NodoGen_Interface{
     }
 
     @Override
-    public NodoGen_Interface getHijoDer() {
+    public NodoGen_Interface getHermanoDer() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -38,8 +42,9 @@ public class NodoGen implements NodoGen_Interface{
     }
 
     @Override
-    public void setHijoDer(NodoGen_Interface nodo) {
+    public void setHermanoDer(NodoGen_Interface nodo) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
     
 }

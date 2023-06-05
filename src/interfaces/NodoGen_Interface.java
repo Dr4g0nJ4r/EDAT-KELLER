@@ -14,11 +14,11 @@ public interface NodoGen_Interface {
     
     public NodoGen_Interface getHijoIzq();
     
-    public NodoGen_Interface getHijoDer();
+    public NodoGen_Interface getHermanoDer();
     
     public void setElem(Object elem);
     
     public void setHijoIzq(NodoGen_Interface nodo);
     
-    public void setHijoDer(NodoGen_Interface nodo);
+    public void setHermanoDer(NodoGen_Interface nodo);
 }

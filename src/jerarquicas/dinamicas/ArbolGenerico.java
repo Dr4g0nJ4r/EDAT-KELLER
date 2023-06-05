@@ -11,6 +11,7 @@ import interfaces.Lista_Interface;
  */
 public class ArbolGenerico implements ArbolGenerico_Interface{
 
+    
     @Override
     public boolean insertar(Object elem, Object elemPadre) {
         
