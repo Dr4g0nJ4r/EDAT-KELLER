@@ -4,7 +4,7 @@
  */
 package lineales.dinamicas;
 
-import lineales.interfaces.PilaInterface;
+import interfaces.PilaInterface;
 
 
 /************* Autores ***********

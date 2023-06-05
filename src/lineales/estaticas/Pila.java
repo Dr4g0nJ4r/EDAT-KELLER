@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package lineales.estaticas;
-import lineales.interfaces.PilaInterface;
+import interfaces.PilaInterface;
 
 /************* Autores ***********
 KELLER LUIS EULOGIO, Legajo FAI-2321
