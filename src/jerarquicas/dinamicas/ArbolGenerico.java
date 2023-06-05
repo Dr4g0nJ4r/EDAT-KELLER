@@ -159,7 +159,12 @@ public class ArbolGenerico implements ArbolGenerico_Interface{
     
     @Override
     public boolean esVacio() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        boolean resultado = false;
+        if(this.raiz != null)
+        {
+            resultado = true;
+        }
+        return resultado;
     }
 
     @Override
