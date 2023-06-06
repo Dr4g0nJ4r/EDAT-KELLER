@@ -5,6 +5,7 @@
 package jerarquicas.dinamicas;
 import interfaces.ArbolGenerico_Interface;
 import interfaces.Lista_Interface;
+import lineales.dinamicas.Cola;
 import lineales.dinamicas.Lista;
 import lineales.dinamicas.Pila;
 /**
@@ -240,27 +241,138 @@ public class ArbolGenerico implements ArbolGenerico_Interface{
     
     @Override
     public Object padre(Object elem) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Object elemento = null;
+        if(this.raiz != null)
+        {
+            if(!this.raiz.getElem().equals(elem))
+            {
+                this.padreRecursivo(elem, this.raiz);
+            }
+        }
+        return elemento;
     }
 
+    //Método privado recursivo que lista en posorden buscando al elemento
+    private Object padreRecursivo(Object elem, NodoGen nodo)
+    {
+        Object elemento = null;
+        NodoGen nodoAux = nodo.getHijoIzq();
+        boolean encontrado = false;
+        while(!encontrado && nodoAux != null && elemento != null)
+        {
+            if(nodoAux.getElem().equals(elem)){
+                encontrado = true;
+                elemento = nodo.getElem();
+            }else{
+                elemento = this.padreRecursivo(elem, nodoAux);
+                nodoAux = nodoAux.getHermanoDer();
+            }
+        }
+        return elemento;
+    }
+    
     @Override
     public Lista listarPreorden() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Lista lista = new Lista();
+        if(this.raiz != null)
+        {
+            this.listarPreordenRecursivo(lista, this.raiz);
+        }
+        return lista;
     }
 
+    //método privado recursivo que guarda en una lista los elementos del árbol con recorrido en preorden
+    private void listarPreordenRecursivo(Lista lista, NodoGen nodo){
+        //guarda el elemento en la lista
+        lista.insertar(nodo.getElem(), lista.longitud()+1);
+        //Recorre los hijos
+        NodoGen nodoAux = nodo.getHijoIzq();
+        while(nodoAux != null){
+            this.listarPreordenRecursivo(lista, nodoAux);
+            nodoAux = nodoAux.getHermanoDer();
+        }
+    }
+    
     @Override
     public Lista listarInorden() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Lista lista = new Lista();
+        if(this.raiz != null)
+        {
+            this.listarInordenRecursivo(lista, this.raiz);
+        }
+        return lista;
     }
 
+    //método privado recursivo que guarda en una lista los elementos del árbol con recorrido en inorden
+    private void listarInordenRecursivo(Lista lista, NodoGen nodo){
+        //Guarda el hijo izquierdo en la lista
+        NodoGen nodoAux = nodo.getHijoIzq();
+        if(nodoAux != null)
+        {
+            this.listarInordenRecursivo(lista, nodoAux);
+        }
+        //guarda el elemento en la lista
+        lista.insertar(nodo.getElem(), lista.longitud()+1);
+        //Recorre los otros hijos
+         if(nodoAux != null)
+        {
+            nodoAux = nodoAux.getHermanoDer();
+            while(nodoAux != null){
+                this.listarPreordenRecursivo(lista, nodoAux);
+                nodoAux = nodoAux.getHermanoDer();
+            }
+        }
+    }
+    
     @Override
     public Lista listarPosorden() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Lista lista = new Lista();
+        if(this.raiz != null)
+        {
+            this.listarPosordenRecursivo(lista, this.raiz);
+        }
+        return lista;
     }
 
+    //método privado recursivo que guarda en una lista los elementos del árbol con recorrido en inorden
+    private void listarPosordenRecursivo(Lista lista, NodoGen nodo){
+        //Recorre todos los hijos
+        NodoGen nodoAux = nodo.getHijoIzq();
+        if(nodoAux != null)
+        {
+            while(nodoAux != null){
+                this.listarPreordenRecursivo(lista, nodoAux);
+                nodoAux = nodoAux.getHermanoDer();
+            }
+        }
+        //guarda el elemento en la lista
+        lista.insertar(nodo.getElem(), lista.longitud()+1);
+    }
+    
     @Override
     public Lista listarPorNiveles() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Lista lista = new Lista();
+        if(this.raiz != null)
+        {
+            Cola cola = new Cola();
+            NodoGen nodoAux;
+            cola.poner(this.raiz);
+            while(!cola.esVacia())
+            {
+                nodoAux = (NodoGen) cola.obtenerFrente();
+                //Guardo elemento en lista
+                lista.insertar(nodoAux.getElem(), lista.longitud()+1);
+                //Recorre los hijos y carga en la cola
+                nodoAux = nodoAux.getHijoIzq();
+                while(nodoAux != null)
+                {
+                    cola.poner(nodoAux);
+                    nodoAux = nodoAux.getHermanoDer();
+                }
+                cola.sacar();
+            }
+        }
+        return lista;
     }
 
     @Override
