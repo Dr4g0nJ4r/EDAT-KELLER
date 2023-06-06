@@ -405,7 +405,44 @@ public class ArbolGenerico implements ArbolGenerico_Interface{
     
     @Override
     public void vaciar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.raiz = null;
     }
     
+    @Override
+    public String toString(){
+        String res = "";
+        if(this.raiz == null)
+        {
+            res = "Árbol vacío";
+        }else{
+            res = this.toStringRecursivo(this.raiz);
+        }
+        return res;
+    }
+    
+    //Método recursivo privado que recorre en preorden el árbol y guarda el elemento
+    private String toStringRecursivo(NodoGen nodo){
+         //Guarda el elemento 
+         String res = nodo.getElem().toString();
+         //Recorre los hijos
+         res += " -> ";
+         NodoGen nodoAux = nodo.getHijoIzq();
+         while(nodoAux != null)
+         {
+             res += nodoAux.getElem().toString();
+             if(nodoAux.getHermanoDer() != null)
+             {
+                 res += ", ";
+             }
+             nodoAux = nodoAux.getHermanoDer();
+         }
+         //Recorre los hijos en recursión
+         nodoAux = nodo.getHijoIzq();
+         while(nodoAux != null)
+         {
+             res += "\n" + toStringRecursivo(nodoAux);
+             nodoAux = nodoAux.getHermanoDer();
+         }
+         return res;
+    }
 }
