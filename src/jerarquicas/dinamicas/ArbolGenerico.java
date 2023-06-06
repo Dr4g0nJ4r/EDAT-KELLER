@@ -377,9 +377,32 @@ public class ArbolGenerico implements ArbolGenerico_Interface{
 
     @Override
     public ArbolGenerico clone() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArbolGenerico clonado = new ArbolGenerico();
+        if(this.raiz != null){
+            clonado.insertar(this.raiz.getElem(),null);
+            this.cloneRecursivo(this.raiz, clonado.raiz);
+        }
+        return clonado;
     }
 
+    //Método recursivo para clonar árbol, recorrido en preorden
+    private void cloneRecursivo(NodoGen nodo, NodoGen nodoClon){
+        //Caso base
+        NodoGen nodoAux = nodo.getHijoIzq();
+        if(nodoAux != null)
+        {
+            nodoClon.setHijoIzq(new NodoGen(nodoAux.getElem()));
+            this.cloneRecursivo(nodoAux, nodoClon.getHijoIzq());
+        }
+        nodoAux = nodo.getHermanoDer();
+        if(nodoAux != null)
+        {
+            nodoClon.setHermanoDer(new NodoGen(nodoAux.getElem()));
+            this.cloneRecursivo(nodoAux, nodoClon.getHermanoDer());
+        }
+    }
+    
+    
     @Override
     public void vaciar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
