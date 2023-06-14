@@ -1,6 +1,8 @@
 
+import lineales.dinamicas.Lista;
 
-import tpo_arbol.Lineales.Dinamicas.Lista;
+
+
 
 /**
  * 

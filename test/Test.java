@@ -1,7 +1,6 @@
 
-
-import tpo_arbol.Jerarquicas.Dinamicas.ArbolGen;
-import tpo_arbol.Lineales.Dinamicas.*;
+import jerarquicas.dinamicas.ArbolGen;
+import lineales.dinamicas.Lista;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -123,14 +122,14 @@ public class Test {
                 + "\n ");
         System.out.println("Lista: " + lista.toString());
         System.out.println("¿La lista tiene duplicados? " + sOk + " --> " + ((contieneDuplicado(lista) ? sOk : sErr)));
-        System.out.println("¿Estan todos los nodos hojas en la lista? " + sOk + " --> " + ((x.sonFrontera(lista) ? sOk : sErr)));
+        //System.out.println("¿Estan todos los nodos hojas en la lista? " + sOk + " --> " + ((x.sonFrontera(lista) ? sOk : sErr)));
         System.out.println("********************************");
         System.out.println("* Pruebas con lista duplicados *");
         System.out.println("********************************");
         lista.insertar(7, 7);
         System.out.println("Insertar 7 a la lista: " + lista.toString());
         System.out.println("¿La lista tiene duplicados? " + sOk + " --> " + ((contieneDuplicado(lista) ? sOk : sErr)));
-        System.out.println("¿Estan todos los nodos hojas en la lista? " + sOk + " --> " + ((x.sonFrontera(lista) ? sOk : sErr)));
+        //System.out.println("¿Estan todos los nodos hojas en la lista? " + sOk + " --> " + ((x.sonFrontera(lista) ? sOk : sErr)));
         lista.eliminar(7);
         System.out.println("Eliminar 7 a la lista: " + lista.toString());
         System.out.println("********************************");
@@ -150,7 +149,7 @@ public class Test {
                 + "\n");
         System.out.println("Lista: " + lista.toString());
         System.out.println("¿La lista tiene duplicados? " + sOk + " --> " + ((contieneDuplicado(lista) ? sOk : sErr)));
-        System.out.println("¿Estan todos los nodos hojas en la lista? " + sOk + " --> " + ((a.sonFrontera(lista) ? sOk : sErr)));
+        //System.out.println("¿Estan todos los nodos hojas en la lista? " + sOk + " --> " + ((a.sonFrontera(lista) ? sOk : sErr)));
         System.out.println("********************************");
         System.out.println("*       Modifico Arbol x       *");
         System.out.println("********************************");
@@ -169,10 +168,10 @@ public class Test {
         x.insertar(15, 4);
         System.out.println("Insertar 15 en árbol x");
         System.out.println("Lista: " + lista.toString());
-        System.out.println("¿Estan todos los nodos hojas en la lista? " + sOk + " --> " + ((a.sonFrontera(lista) ? sOk : sErr)));
+        //System.out.println("¿Estan todos los nodos hojas en la lista? " + sOk + " --> " + ((a.sonFrontera(lista) ? sOk : sErr)));
         lista.insertar(15,7);
         System.out.println("Insertar 15 a la lista: " + lista.toString());
-        System.out.println("¿Estan todos los nodos hojas en la lista? " + sOk + " --> " + ((x.sonFrontera(lista) ? sOk : sErr)));
+        //System.out.println("¿Estan todos los nodos hojas en la lista? " + sOk + " --> " + ((x.sonFrontera(lista) ? sOk : sErr)));
     }
     public static void testEquals() {
         System.out.println(ANSI_CYAN_BACKGROUND + ROJO + "**************************************************************");

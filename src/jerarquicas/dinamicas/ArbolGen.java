@@ -11,12 +11,12 @@ import lineales.dinamicas.Pila;
  *
  * @author Luis
  */
-public class ArbolGenerico implements ArbolGenerico_Interface{
+public class ArbolGen implements ArbolGenerico_Interface{
 
     private NodoGen raiz;
     
     //Constructor
-    public ArbolGenerico(){
+    public ArbolGen(){
         this.raiz = null;
     }
     
@@ -169,9 +169,45 @@ public class ArbolGenerico implements ArbolGenerico_Interface{
 
     @Override
     public int altura() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int nivel = -1;
+        if(this.raiz != null){
+            nivel = this.alturaRecursivo(nivel, this.raiz, false);
+        }
+        return nivel;
     }
 
+    //Método recursivo privado que recorren en preorden y devuelve la altura de un nodo
+    private int alturaRecursivo(Object elem, NodoGen nodo, boolean encontrado){
+        int altura = -1;
+        if(encontrado || nodo.getElem().equals(elem))
+        {
+            altura = 0;
+            NodoGen nodoAux = nodo.getHijoIzq();
+            int alturaAux = 0;
+            //Caso base
+            while(nodoAux != null)
+            {
+                //Caso recursivo
+                alturaAux = this.alturaRecursivo(elem, nodoAux, true) + 1;
+                if(altura < alturaAux)
+                {
+                    altura = alturaAux;
+                }
+                nodoAux = nodoAux.getHermanoDer();
+            }
+        }else{
+            NodoGen nodoAux = nodo.getHijoIzq();
+            //Caso base
+            while(nodoAux != null && altura != -1)
+            {
+                //Caso recursivo
+                altura = this.alturaRecursivo(elem, nodoAux, false);
+                nodoAux = nodoAux.getHermanoDer();
+            }
+        }
+        return altura;
+    }
+    
     @Override
     public int nivel(Object elem) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -183,27 +219,27 @@ public class ArbolGenerico implements ArbolGenerico_Interface{
     }
 
     @Override
-    public Lista_Interface listarPreorden() {
+    public Lista listarPreorden() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Lista_Interface listarInorden() {
+    public Lista listarInorden() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Lista_Interface listarPosorden() {
+    public Lista listarPosorden() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Lista_Interface listarPorNiveles() {
+    public Lista listarPorNiveles() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public ArbolGenerico_Interface clone() {
+    public ArbolGen clone() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

@@ -1,5 +1,8 @@
 
-import tpo_arbol.Lineales.Dinamicas.Cola;
+import lineales.dinamicas.Cola;
+
+
+
 public class TestingCola {
 
 	// import lineales.estaticas.Cola;
