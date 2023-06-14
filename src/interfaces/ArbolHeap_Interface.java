@@ -4,10 +4,22 @@
  */
 package interfaces;
 
+import lineales.dinamicas.Lista;
+
 /**
  *
  * @author Luis
  */
 public interface ArbolHeap_Interface {
     
+    public boolean insertar(Object elem);
+    public boolean eliminarCima();
+    public Object recuperarCima();
+    public boolean esVacia();
+    public void vaciar();
+    public Lista listarPreorden();
+    public Lista listarInorden();
+    public Lista listarPosorden();
+    public Lista listarPorNiveles();
+    public String toString();
 }

@@ -4,7 +4,7 @@
  */
 package interfaces;
 
-import jerarquicas.dinamicas.ArbolGenerico;
+import jerarquicas.dinamicas.ArbolGen;
 import lineales.dinamicas.Lista;
 
 /**
@@ -35,7 +35,7 @@ public interface ArbolGenerico_Interface {
     
     public Lista listarPorNiveles();
     
-    public ArbolGenerico clone();
+    public ArbolGen clone();
     
     public void vaciar();
     
